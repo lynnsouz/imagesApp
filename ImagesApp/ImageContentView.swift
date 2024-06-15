@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ImageContentView: View {
     private let size: Double = 64
@@ -13,17 +14,12 @@ struct ImageContentView: View {
 
     var body: some View {
         VStack {
-            AsyncImage(url: URL(string: url)) { image in
-                image
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: size, height: size)
-            } placeholder: {
-                ProgressView()
-                    .frame(width: size, height: size)
-            }
-            .background(.thickMaterial)
-            .clipShape(RoundedRectangle(cornerSize: CGSize(width: 8, height: 8)))
+            KFImage.url(URL(string: url))
+                .aspectRatio(contentMode: .fit)
+                .frame(width: size, height: size, alignment: .center)
+                .background(.gray)
+                .clipShape(RoundedRectangle(cornerSize: CGSize(width: 8, 
+                                                               height: 8)))
         }
     }
 }
