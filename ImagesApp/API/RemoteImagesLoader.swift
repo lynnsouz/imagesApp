@@ -18,7 +18,7 @@ public final class RemoteImagesLoader: ImagesSearchLoader {
     }
 
     public init(url: URL = baseURL,
-                client: HTTPClient) {
+                client: HTTPClient = URLSessionHTTPClient()) {
         self.url = url
         self.client = client
     }

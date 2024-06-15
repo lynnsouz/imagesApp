@@ -8,11 +8,14 @@
 import Foundation
 
 public struct ImagesSerach: Codable, Equatable {
+    let id: UUID
     let title: String
     let items: [ImageItem]
     
-    public init(title: String,
+    public init(id: UUID = UUID(),
+                title: String,
                 items: [ImageItem]) {
+        self.id = id
         self.title = title
         self.items = items
     }
@@ -22,12 +25,27 @@ public struct ImagesSerach: Codable, Equatable {
     }
 }
 
-public struct ImageItem: Codable, Equatable {
+public struct ImageItem: Codable, Equatable, Identifiable {
+    public let id: UUID
     let title: String
     let link: String
     let description: String
     let author: String
     let tags: String
+    
+    public init(id: UUID = UUID(),
+                title: String,
+                link: String,
+                description: String,
+                author: String,
+                tags: String) {
+        self.id = id
+        self.title = title
+        self.link = link
+        self.description = description
+        self.author = author
+        self.tags = tags
+    }
     
     public static func == (lhs: ImageItem, rhs: ImageItem) -> Bool {
         lhs.title == rhs.title && lhs.link == rhs.link
@@ -38,30 +56,19 @@ public struct ImageItem: Codable, Equatable {
 class ImagesSerachMapper {
     private init() {}
     
+    private struct Media: Decodable{
+        let m: String
+    }
+    
     private struct ImageDecodable: Decodable {
         let title: String
-        let link: String
-        let media: Media
-        let dateTaken: Date
         let description: String
-        let published: Date
-        let author, authorID, tags: String
-        
-        struct Media: Decodable {
-            let m: String
-        }
-        
-        enum CodingKeys: String, CodingKey {
-            case title, link, media
-            case dateTaken = "date_taken"
-            case description, published, author
-            case authorID = "author_id"
-            case tags
-        }
+        let author, tags: String
+        let media: Media
         
         var image: ImageItem {
             ImageItem(title: title,
-                      link: link,
+                      link: media.m,
                       description: description,
                       author: author,
                       tags: tags)
@@ -72,8 +79,6 @@ class ImagesSerachMapper {
         let title: String
         let link: String
         let description: String
-        let modified: Date
-        let generator: String
         let items: [ImageDecodable]
         
         var response: ImagesSerach {
