@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C160DE82C1E02B8004C67BF /* ImagesAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C160DE72C1E02B8004C67BF /* ImagesAppApp.swift */; };
+		3C160DE82C1E02B8004C67BF /* ImagesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C160DE72C1E02B8004C67BF /* ImagesApp.swift */; };
 		3C160DEA2C1E02B8004C67BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C160DE92C1E02B8004C67BF /* ContentView.swift */; };
 		3C160DEC2C1E02B9004C67BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C160DEB2C1E02B9004C67BF /* Assets.xcassets */; };
 		3C160DF02C1E02B9004C67BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C160DEF2C1E02B9004C67BF /* Preview Assets.xcassets */; };
@@ -35,7 +35,7 @@
 
 /* Begin PBXFileReference section */
 		3C160DE42C1E02B8004C67BF /* ImagesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImagesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C160DE72C1E02B8004C67BF /* ImagesAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesAppApp.swift; sourceTree = "<group>"; };
+		3C160DE72C1E02B8004C67BF /* ImagesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesApp.swift; sourceTree = "<group>"; };
 		3C160DE92C1E02B8004C67BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3C160DEB2C1E02B9004C67BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C160DED2C1E02B9004C67BF /* ImagesApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ImagesApp.entitlements; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		3C160DE62C1E02B8004C67BF /* ImagesApp */ = {
 			isa = PBXGroup;
 			children = (
-				3C160DE72C1E02B8004C67BF /* ImagesAppApp.swift */,
+				3C160DE72C1E02B8004C67BF /* ImagesApp.swift */,
 				3C160DE92C1E02B8004C67BF /* ContentView.swift */,
 				3C160DEB2C1E02B9004C67BF /* Assets.xcassets */,
 				3C160DED2C1E02B9004C67BF /* ImagesApp.entitlements */,
@@ -260,7 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C160DEA2C1E02B8004C67BF /* ContentView.swift in Sources */,
-				3C160DE82C1E02B8004C67BF /* ImagesAppApp.swift in Sources */,
+				3C160DE82C1E02B8004C67BF /* ImagesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
